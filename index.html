@@ -1,62 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Praise Adefemi – Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Praise Adefemi | Software Developer Portfolio</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-    header { text-align: center; }
-    nav a { margin: 0 10px; text-decoration: none; color: #0366d6; }
-    section { margin-top: 40px; }
-    footer { margin-top: 60px; font-size: 0.9em; color: #555; }
+    * { box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9f9f9; color: #333;
+    }
+    header {
+      background: #24292e; color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.1rem; opacity: 0.9; }
+    nav {
+      background: #1b1f23;
+      display: flex; justify-content: center;
+      gap: 20px; padding: 12px 0;
+    }
+    nav a {
+      color: #fff; text-decoration: none; font-weight: 600;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+
+    section { margin-bottom: 60px; }
+    h2 {
+      color: #24292e; border-bottom: 2px solid #0366d6;
+      display: inline-block; padding-bottom: 4px;
+    }
+
+    .skills {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;
+    }
+    .skill {
+      background: #0366d6; color: #fff;
+      padding: 6px 14px; border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    article {
+      background: #fff; padding: 20px;
+      border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background: #24292e; color: #ccc;
+      text-align: center; padding: 20px; font-size: 0.9rem;
+    }
+
+    a.button {
+      background: #0366d6; color: white; text-decoration: none;
+      padding: 8px 14px; border-radius: 5px;
+      display: inline-block; margin-top: 8px;
+    }
+    a.button:hover { background: #024c9a; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Praise Adefemi – E-Portfolio</h1>
-    <p>Last updated: November 2025 | Author: Praise Adefemi</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills & Experience</a>
-      <a href="#artifacts">Artifacts</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Praise Adefemi</h1>
+    <p>Software Developer | HTML · CSS · JavaScript · Java · Python</p>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Second-year Computer Systems Technology student at Saskatchewan Polytechnic. I build backend APIs, test automation, and data integrity tools in Python, JavaScript, and C#.</p>
-  </section>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#artifacts">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <section id="skills">
-    <h2>Skills & Experience</h2>
-    <ul>
-      <li>Backend Development (FastAPI, Node.js)</li>
-      <li>Database Design and Normalization (SQL, SQLite)</li>
-      <li>Testing (Cypress, Jest)</li>
-      <li>Frontend (React, Bootstrap)</li>
-    </ul>
-  </section>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a Computer Systems Technology student passionate about creating
+        practical software solutions. I enjoy building responsive web
+        interfaces, backend APIs, and full-stack applications using technologies
+        like JavaScript, Java, and Python. My goal is to grow into a software
+        developer role where I can combine technical skills with problem-solving
+        creativity.
+      </p>
+    </section>
 
-  <section id="artifacts">
-    <h2>Artifacts & Reflections</h2>
-    <article>
-      <h3>AI Tutor Project – Delete File Workflow</h3>
-      <p><strong>Skills demonstrated:</strong> API design, data integrity, error handling, UX design</p>
-      <p><strong>Reflection:</strong> I implemented a FastAPI DELETE endpoint for file removal and ensured UUID integrity across SQLite and ChromaDB. This taught me about database consistency and clear error feedback to users. Next time, I’ll add async unit tests to improve coverage.</p>
-    </article>
-  </section>
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="skills">
+        <div class="skill">HTML5</div>
+        <div class="skill">CSS3</div>
+        <div class="skill">JavaScript (React, Bootstrap)</div>
+        <div class="skill">Java (OOP, Threads, Networking)</div>
+        <div class="skill">Python (FastAPI, SQLite)</div>
+        <div class="skill">C# (Data Structures, Algorithms)</div>
+        <div class="skill">SQL / Database Design</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">Testing (Cypress, Jest, xUnit)</div>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:praise@example.com">praise@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/praiseadefemi">linkedin.com/in/praiseadefemi</a></p>
-    <p>GitHub: <a href="https://github.com/praiseadefemi">github.com/praiseadefemi</a></p>
-  </section>
+    <section id="artifacts">
+      <h2>Featured Projects</h2>
+
+      <article>
+        <h3>AI Tutor Platform</h3>
+        <p>
+          A full-stack project using FastAPI and React that processes uploaded
+          text files with ChromaDB and provides retrieval-based answers.
+        </p>
+        <p><strong>Skills:</strong> Python, FastAPI, Database Integration, Team Collaboration</p>
+        <a class="button" href="artifact1.html">View Reflection</a>
+      </article>
+
+      <article>
+        <h3>Travel Journal Web App</h3>
+        <p>
+          A Node.js/Express and Handlebars project that allows users to log
+          destinations and attach journal entries with uploaded photos.
+        </p>
+        <p><strong>Skills:</strong> Express, Handlebars, CRUD, ERD, Authentication</p>
+        <a class="button" href="artifact2.html">View Reflection</a>
+      </article>
+
+      <article>
+        <h3>Java Networking Project</h3>
+        <p>
+          A multithreaded file upload/download system demonstrating socket
+          programming, concurrency, and data management.
+        </p>
+        <p><strong>Skills:</strong> Java, Threads, Networking, Client–Server Architecture</p>
+        <a class="button" href="artifact3.html">View Reflection</a>
+      </article>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:praise@example.com">praise@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/praiseadefemi">linkedin.com/in/praiseadefemi</a></p>
+      <p>GitHub: <a href="https://github.com/Praise-12">github.com/Praise-12</a></p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Praise Adefemi | TCOM 291 Portfolio</p>
+    <p>© 2025 Praise Adefemi — Last updated: November 2025</p>
   </footer>
 </body>
 </html>
