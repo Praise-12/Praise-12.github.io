@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Praise Adefemi | CST Portfolio</title>
   <style>
-    /* RESET + LAYOUT */
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     html, body {
       height: 100%;
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      background: #0e0e0e;
+      color: #e5e5e5;
       overflow-x: hidden;
-      font-family: "Poppins", Arial, sans-serif;
-      color: #fff;
-      background: #0d1117;
     }
 
+    /* Sections */
     section {
       height: 100vh;
       display: flex;
@@ -22,100 +22,127 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      padding: 40px;
       transition: transform 0.8s ease, opacity 0.8s ease;
     }
 
-    h1, h2, h3 { margin-bottom: 0.5rem; }
-    p { max-width: 700px; margin: 0.5rem auto; line-height: 1.7; }
-
-    /* HEADER */
-    #home {
-      background: linear-gradient(135deg, #0366d6, #4f46e5);
-    }
-    #home h1 { font-size: 3rem; }
-    #home p { font-size: 1.2rem; opacity: 0.9; }
-
-    /* NAVBAR */
+    /* Navbar */
     nav {
       position: fixed;
       top: 20px; left: 50%;
       transform: translateX(-50%);
-      display: flex; gap: 20px;
-      background: rgba(0,0,0,0.5);
-      padding: 10px 20px;
-      border-radius: 30px;
-      z-index: 1000;
+      display: flex; gap: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 12px 25px;
+      border-radius: 40px;
       backdrop-filter: blur(10px);
+      z-index: 1000;
     }
     nav a {
-      color: #fff; text-decoration: none;
-      font-weight: 600; transition: color 0.3s;
+      color: #e5e5e5;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.3s, text-shadow 0.3s;
     }
-    nav a:hover { color: #22d3ee; }
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 8px rgba(255,255,255,0.5);
+    }
 
-    /* SECTION COLORS */
-    #skills { background: #111827; }
-    #projects { background: #1e293b; }
-    #contact { background: #0f172a; }
+    /* Color Themes for Sections */
+    #home { background: #121212; }
+    #skills { background: #181818; }
+    #projects { background: #1f1f1f; }
+    #contact { background: #141414; }
 
-    /* BUTTONS */
+    /* Typography */
+    h1 { font-size: 3rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 2rem; margin-bottom: 1rem; color: #f0f0f0; }
+    p { max-width: 700px; line-height: 1.8; color: #bfbfbf; }
+
+    /* Buttons */
     .button {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      border-radius: 30px;
-      background: #22d3ee;
-      color: #0f172a;
-      font-weight: bold;
+      margin-top: 20px;
+      padding: 10px 24px;
+      border-radius: 40px;
+      background: #2b2b2b;
+      border: 1px solid #555;
+      color: #f5f5f5;
+      font-weight: 600;
       text-decoration: none;
       transition: all 0.3s;
     }
-    .button:hover { background: #0ea5e9; color: #fff; }
+    .button:hover {
+      background: #3a3a3a;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
 
-    /* SKILLS GRID */
+    /* Skills */
     .skills {
-      display: flex; flex-wrap: wrap;
-      justify-content: center; gap: 12px; margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 15px;
     }
     .skill {
-      background: #22d3ee;
-      color: #0f172a;
-      padding: 8px 14px;
+      background: #2c2c2c;
+      padding: 8px 16px;
       border-radius: 20px;
+      color: #e5e5e5;
       font-size: 0.9rem;
-      transition: transform 0.3s;
+      border: 1px solid #444;
+      transition: transform 0.3s, background 0.3s;
     }
-    .skill:hover { transform: scale(1.1); }
+    .skill:hover {
+      background: #383838;
+      transform: scale(1.08);
+    }
 
-    /* PROJECT CARDS */
+    /* Project Cards */
+    .cards {
+      display: flex; flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
     .card {
-      background: #111827;
-      border: 1px solid #1f2937;
+      background: #202020;
       border-radius: 12px;
       padding: 20px;
-      margin: 15px;
       width: 280px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      transition: transform 0.4s;
+      border: 1px solid #333;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      transition: transform 0.4s, box-shadow 0.4s;
     }
-    .card:hover { transform: translateY(-10px); }
-    .cards { display: flex; flex-wrap: wrap; justify-content: center; }
-
-    footer {
-      background: #0f172a;
-      padding: 10px;
-      font-size: 0.9rem;
-      text-align: center;
-      color: #9ca3af;
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 18px rgba(255,255,255,0.1);
+    }
+    .card h3 {
+      color: #fff; margin-bottom: 10px;
+    }
+    .card p {
+      font-size: 0.9rem; color: #bfbfbf;
     }
 
-    /* ANIMATIONS */
+    /* Reveal Animations */
     .hidden { opacity: 0; transform: translateY(40px); }
     .show { opacity: 1; transform: translateY(0); }
 
+    footer {
+      background: #0b0b0b;
+      text-align: center;
+      padding: 15px;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
     @media (max-width: 600px) {
-      #home h1 { font-size: 2rem; }
-      nav { flex-wrap: wrap; gap: 10px; }
+      h1 { font-size: 2rem; }
+      nav { flex-wrap: wrap; gap: 15px; }
     }
   </style>
 </head>
@@ -128,88 +155,85 @@
   </nav>
 
   <!-- HOME -->
-  <section id="home" class="slide">
+  <section id="home">
     <h1>Praise Adefemi</h1>
-    <p>Computer Systems Technology Student | Developer | Security & Database Enthusiast</p>
-    <a class="button" href="#skills">Explore My Portfolio</a>
+    <p>Computer Systems Technology Student | Software Development · Databases · Security</p>
+    <a class="button" href="#skills">Explore My Work</a>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="hidden slide">
+  <section id="skills" class="hidden">
     <h2>Technical & Professional Skills</h2>
     <div class="skills">
-      <div class="skill">HTML</div><div class="skill">CSS</div>
-      <div class="skill">JavaScript</div><div class="skill">Java</div>
-      <div class="skill">Python</div><div class="skill">C#</div>
-      <div class="skill">SQL & ERD</div><div class="skill">Network Security</div>
-      <div class="skill">Customer Service</div><div class="skill">Team Collaboration</div>
-      <div class="skill">Testing</div><div class="skill">Git & GitHub</div>
+      <div class="skill">HTML / CSS / JavaScript</div>
+      <div class="skill">Java & OOP</div>
+      <div class="skill">Python (FastAPI)</div>
+      <div class="skill">C# (Data Structures)</div>
+      <div class="skill">SQL & Database Design</div>
+      <div class="skill">Network & Cybersecurity</div>
+      <div class="skill">Customer Service & Teamwork</div>
+      <div class="skill">Testing & Debugging</div>
+      <div class="skill">Git & GitHub</div>
     </div>
-    <p style="margin-top:20px;">I combine technical development with security awareness and professional communication to deliver reliable, user-focused solutions.</p>
+    <p style="margin-top:20px;">I bring a blend of technical precision and professional communication—bridging coding, database design, and enterprise-level collaboration.</p>
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="hidden slide">
-    <h2>Featured Projects</h2>
+  <section id="projects" class="hidden">
+    <h2>Projects</h2>
     <div class="cards">
       <div class="card">
-        <h3>AI Tutor</h3>
-        <p>FastAPI + React platform for document-based learning with database sync and deletion workflows.</p>
+        <h3>AI Tutor Platform</h3>
+        <p>FastAPI + React system for document-based learning, featuring secure UUID data sync and removal logic.</p>
       </div>
       <div class="card">
-        <h3>Travel Journal</h3>
-        <p>Node.js app for logging destinations and managing user-uploaded photos with authentication.</p>
+        <h3>Travel Journal App</h3>
+        <p>Node.js and Handlebars project enabling travel logging, photo uploads, and many-to-many DB relationships.</p>
       </div>
       <div class="card">
         <h3>Java Networking</h3>
-        <p>Multi-threaded client-server app handling secure file transfer and concurrent downloads.</p>
+        <p>Client-server multithreaded app for file uploads and secure transfers, highlighting concurrency and protocols.</p>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="hidden slide">
+  <section id="contact" class="hidden">
     <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:praise@example.com" style="color:#22d3ee;">praise@example.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/praiseadefemi" style="color:#22d3ee;">linkedin.com/in/praiseadefemi</a></p>
-    <p>GitHub: <a href="https://github.com/Praise-12" style="color:#22d3ee;">github.com/Praise-12</a></p>
-    <p><a class="button" href="#home">Back to Top</a></p>
+    <p>Email: <a href="mailto:praise@example.com" style="color:#d4d4d4;">praiseadefe@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/praiseadefemi" style="color:#d4d4d4;">linkedin.com/in/praiseadefemi</a></p>
+    <p>GitHub: <a href="https://github.com/Praise-12" style="color:#d4d4d4;">github.com/Praise-12</a></p>
+    <a class="button" href="#home">Back to Top</a>
   </section>
 
   <footer>
-    <p>© 2025 Praise Adefemi — Last updated: November 2025</p>
+    © 2025 Praise Adefemi — Last updated: November 2025
   </footer>
 
-  <!-- JavaScript for animations and swipe -->
   <script>
-    // Section reveal animation
-    const observer = new IntersectionObserver((entries) => {
+    // Smooth reveal on scroll
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('show');
       });
     }, { threshold: 0.2 });
-
     document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 
-    // Swipe navigation for touch devices
+    // Swipe navigation
     let startY = 0;
     document.addEventListener("touchstart", e => startY = e.touches[0].clientY);
     document.addEventListener("touchend", e => {
       const endY = e.changedTouches[0].clientY;
-      if (startY - endY > 50) scrollNext(); // swipe up
-      if (endY - startY > 50) scrollPrev(); // swipe down
+      if (startY - endY > 50) scrollNext();
+      if (endY - startY > 50) scrollPrev();
     });
-
     function scrollNext() {
-      const current = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
+      const current = document.elementFromPoint(window.innerWidth/2, window.innerHeight/2);
       const next = current.closest("section").nextElementSibling;
       if (next) next.scrollIntoView({ behavior: "smooth" });
     }
-
     function scrollPrev() {
-      const current = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
+      const current = document.elementFromPoint(window.innerWidth/2, window.innerHeight/2);
       const prev = current.closest("section").previousElementSibling;
       if (prev) prev.scrollIntoView({ behavior: "smooth" });
     }
