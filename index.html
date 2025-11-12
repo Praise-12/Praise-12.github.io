@@ -3,161 +3,216 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Praise Adefemi | CST Student Portfolio</title>
+  <title>Praise Adefemi | CST Portfolio</title>
   <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f9f9f9; color: #333;
+    /* RESET + LAYOUT */
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+      font-family: "Poppins", Arial, sans-serif;
+      color: #fff;
+      background: #0d1117;
     }
-    header {
-      background: #24292e; color: #fff;
+
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 60px 20px;
+      transition: transform 0.8s ease, opacity 0.8s ease;
     }
-    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-    header p { font-size: 1.1rem; opacity: 0.9; }
+
+    h1, h2, h3 { margin-bottom: 0.5rem; }
+    p { max-width: 700px; margin: 0.5rem auto; line-height: 1.7; }
+
+    /* HEADER */
+    #home {
+      background: linear-gradient(135deg, #0366d6, #4f46e5);
+    }
+    #home h1 { font-size: 3rem; }
+    #home p { font-size: 1.2rem; opacity: 0.9; }
+
+    /* NAVBAR */
     nav {
-      background: #1b1f23;
-      display: flex; justify-content: center;
-      gap: 20px; padding: 12px 0;
+      position: fixed;
+      top: 20px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; gap: 20px;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 30px;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
     }
     nav a {
-      color: #fff; text-decoration: none; font-weight: 600;
+      color: #fff; text-decoration: none;
+      font-weight: 600; transition: color 0.3s;
     }
-    nav a:hover { text-decoration: underline; }
+    nav a:hover { color: #22d3ee; }
 
-    main { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    /* SECTION COLORS */
+    #skills { background: #111827; }
+    #projects { background: #1e293b; }
+    #contact { background: #0f172a; }
 
-    section { margin-bottom: 60px; }
-    h2 {
-      color: #24292e; border-bottom: 2px solid #0366d6;
-      display: inline-block; padding-bottom: 4px;
+    /* BUTTONS */
+    .button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: #22d3ee;
+      color: #0f172a;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s;
     }
+    .button:hover { background: #0ea5e9; color: #fff; }
 
+    /* SKILLS GRID */
     .skills {
-      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 12px; margin-top: 20px;
     }
     .skill {
-      background: #0366d6; color: #fff;
-      padding: 6px 14px; border-radius: 20px;
+      background: #22d3ee;
+      color: #0f172a;
+      padding: 8px 14px;
+      border-radius: 20px;
       font-size: 0.9rem;
+      transition: transform 0.3s;
     }
+    .skill:hover { transform: scale(1.1); }
 
-    article {
-      background: #fff; padding: 20px;
-      border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      margin-bottom: 20px;
+    /* PROJECT CARDS */
+    .card {
+      background: #111827;
+      border: 1px solid #1f2937;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: transform 0.4s;
     }
+    .card:hover { transform: translateY(-10px); }
+    .cards { display: flex; flex-wrap: wrap; justify-content: center; }
 
     footer {
-      background: #24292e; color: #ccc;
-      text-align: center; padding: 20px; font-size: 0.9rem;
+      background: #0f172a;
+      padding: 10px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #9ca3af;
     }
 
-    a.button {
-      background: #0366d6; color: white; text-decoration: none;
-      padding: 8px 14px; border-radius: 5px;
-      display: inline-block; margin-top: 8px;
+    /* ANIMATIONS */
+    .hidden { opacity: 0; transform: translateY(40px); }
+    .show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      #home h1 { font-size: 2rem; }
+      nav { flex-wrap: wrap; gap: 10px; }
     }
-    a.button:hover { background: #024c9a; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Praise Adefemi</h1>
-    <p>Computer Systems Technology Student | Full-Stack · Security · Databases · Customer Service</p>
-  </header>
-
   <nav>
-    <a href="#about">About</a>
+    <a href="#home">Home</a>
     <a href="#skills">Skills</a>
-    <a href="#artifacts">Projects</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I’m a second-year Computer Systems Technology student at Saskatchewan Polytechnic.
-        My work combines technical and interpersonal skills from programming and database
-        design to cybersecurity and customer service. I’m passionate about creating software
-        that is secure, efficient, and easy to use. My goal is to become a well-rounded
-        software developer who understands both the technology and the people behind it.
-      </p>
-    </section>
+  <!-- HOME -->
+  <section id="home" class="slide">
+    <h1>Praise Adefemi</h1>
+    <p>Computer Systems Technology Student | Developer | Security & Database Enthusiast</p>
+    <a class="button" href="#skills">Explore My Portfolio</a>
+  </section>
 
-    <section id="skills">
-      <h2>Technical & Professional Skills</h2>
-      <div class="skills">
-        <div class="skill">HTML5 / CSS3 / JavaScript</div>
-        <div class="skill">React / Bootstrap</div>
-        <div class="skill">Java (OOP, Threads, Networking)</div>
-        <div class="skill">Python (FastAPI, SQLite)</div>
-        <div class="skill">C# (Data Structures, Hash Tables, Trees)</div>
-        <div class="skill">SQL & Database Design (1NF–3NF, ERD)</div>
-        <div class="skill">Network Security Fundamentals</div>
-        <div class="skill">Cybersecurity Principles</div>
-        <div class="skill">Testing (Cypress)</div>
-        <div class="skill">Customer Service & Enterprise Communication</div>
-        <div class="skill">Team Collaboration</div>
-        <div class="skill">Git & GitHub Version Control</div>
+  <!-- SKILLS -->
+  <section id="skills" class="hidden slide">
+    <h2>Technical & Professional Skills</h2>
+    <div class="skills">
+      <div class="skill">HTML</div><div class="skill">CSS</div>
+      <div class="skill">JavaScript</div><div class="skill">Java</div>
+      <div class="skill">Python</div><div class="skill">C#</div>
+      <div class="skill">SQL & ERD</div><div class="skill">Network Security</div>
+      <div class="skill">Customer Service</div><div class="skill">Team Collaboration</div>
+      <div class="skill">Testing</div><div class="skill">Git & GitHub</div>
+    </div>
+    <p style="margin-top:20px;">I combine technical development with security awareness and professional communication to deliver reliable, user-focused solutions.</p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="hidden slide">
+    <h2>Featured Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>AI Tutor</h3>
+        <p>FastAPI + React platform for document-based learning with database sync and deletion workflows.</p>
       </div>
+      <div class="card">
+        <h3>Travel Journal</h3>
+        <p>Node.js app for logging destinations and managing user-uploaded photos with authentication.</p>
+      </div>
+      <div class="card">
+        <h3>Java Networking</h3>
+        <p>Multi-threaded client-server app handling secure file transfer and concurrent downloads.</p>
+      </div>
+    </div>
+  </section>
 
-      <p style="margin-top: 15px;">
-        I’ve developed a strong foundation across multiple disciplines —
-        from secure network configurations to data normalization and
-        professional communication. These diverse experiences have helped me
-        become adaptable and solution-focused in any project environment.
-      </p>
-    </section>
-
-    <section id="artifacts">
-      <h2>Featured Projects & Artifacts</h2>
-
-      <article>
-        <h3>AI Tutor Platform</h3>
-        <p>
-          A collaborative FastAPI and React project that allows students to
-          upload and process files using ChromaDB for retrieval-based question answering.
-        </p>
-        <p><strong>Skills:</strong> Python, FastAPI, SQLite, ChromaDB, Testing</p>
-        <a class="button" href="artifact1.html">View Reflection</a>
-      </article>
-
-      <article>
-        <h3>Travel Journal Web App</h3>
-        <p>
-          A Node.js/Express project that lets users log trips, rate destinations,
-          and upload images. Implemented CRUD operations and database relationships.
-        </p>
-        <p><strong>Skills:</strong> Node.js, Handlebars, ERD Design, CRUD, UX/UI</p>
-        <a class="button" href="artifact2.html">View Reflection</a>
-      </article>
-
-      <article>
-        <h3>Java Networking Project</h3>
-        <p>
-          A multithreaded file transfer application demonstrating client-server
-          communication, socket programming, and secure data handling.
-        </p>
-        <p><strong>Skills:</strong> Java, Threads, Networking, Security Principles</p>
-        <a class="button" href="artifact3.html">View Reflection</a>
-      </article>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:praise@example.com">praise@example.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/praiseadefemi">linkedin.com/in/praiseadefemi</a></p>
-      <p>GitHub: <a href="https://github.com/Praise-12">github.com/Praise-12</a></p>
-    </section>
-  </main>
+  <!-- CONTACT -->
+  <section id="contact" class="hidden slide">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:praise@example.com" style="color:#22d3ee;">praise@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/praiseadefemi" style="color:#22d3ee;">linkedin.com/in/praiseadefemi</a></p>
+    <p>GitHub: <a href="https://github.com/Praise-12" style="color:#22d3ee;">github.com/Praise-12</a></p>
+    <p><a class="button" href="#home">Back to Top</a></p>
+  </section>
 
   <footer>
     <p>© 2025 Praise Adefemi — Last updated: November 2025</p>
   </footer>
+
+  <!-- JavaScript for animations and swipe -->
+  <script>
+    // Section reveal animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
+    // Swipe navigation for touch devices
+    let startY = 0;
+    document.addEventListener("touchstart", e => startY = e.touches[0].clientY);
+    document.addEventListener("touchend", e => {
+      const endY = e.changedTouches[0].clientY;
+      if (startY - endY > 50) scrollNext(); // swipe up
+      if (endY - startY > 50) scrollPrev(); // swipe down
+    });
+
+    function scrollNext() {
+      const current = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
+      const next = current.closest("section").nextElementSibling;
+      if (next) next.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function scrollPrev() {
+      const current = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
+      const prev = current.closest("section").previousElementSibling;
+      if (prev) prev.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
 </body>
 </html>
