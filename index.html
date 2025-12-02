@@ -1,220 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="ct-8">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Praise Adefemi | CST Portfolio</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    html, body {
-      height: 100%;
-      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-      overflow-x: hidden;
-    }
-
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 20px; left: 50%;
-      transform: translateX(-50%);
-      display: flex; gap: 30px;
-      background: rgba(255,255,255,0.8);
-      border: 1px solid #ccc;
-      padding: 10px 25px;
-      border-radius: 40px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      z-index: 1000;
-      backdrop-filter: blur(6px);
-    }
-    nav a {
-      color: #222; text-decoration: none;
-      font-weight: 600; letter-spacing: 0.4px;
-      transition: color 0.3s, transform 0.3s;
-    }
-    nav a:hover { color: #555; transform: translateY(-1px); }
-
-    section {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 50px;
-      transition: transform 0.8s ease, opacity 0.8s ease;
-    }
-
-    #home { background: linear-gradient(135deg, #e0e0e0, #fafafa); }
-    #skills { background: #ededed; }
-    #projects { background: #e4e4e4; }
-    #contact { background: #f0f0f0; }
-
-    h1 { font-size: 3rem; margin-bottom: 0.4rem; color: #111; }
-    h2 { font-size: 2rem; margin-bottom: 1rem; color: #111; }
-    p { max-width: 750px; line-height: 1.8; color: #333; }
-
-    /* Button */
-    .button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 24px;
-      border-radius: 40px;
-      background: #d6d6d6;
-      border: 1px solid #bcbcbc;
-      color: #222;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    .button:hover {
-      background: #cfcfcf;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    }
-
-    /* Skills */
-    .skills {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 15px;
-    }
-    .skill {
-      background: #fff;
-      border: 1px solid #ccc;
-      color: #222;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      transition: all 0.3s;
-    }
-    .skill:hover {
-      background: #ddd;
-      transform: scale(1.05);
-    }
-
-    /* Project Cards */
-    .cards {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px;
-      width: 280px;
-      border: 1px solid #ccc;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 5px 16px rgba(0,0,0,0.15);
-    }
-    .card h3 { color: #111; margin-bottom: 10px; }
-    .card p { font-size: 0.9rem; color: #333; }
-
-    footer {
-      background: #e0e0e0;
-      text-align: center;
-      padding: 15px;
-      color: #444;
-      font-size: 0.9rem;
-    }
-
-    .hidden { opacity: 0; transform: translateY(40px); }
-    .show { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      nav { flex-wrap: wrap; gap: 15px; }
-    }
-  </style>
+    <title>Praise Adefemi | My Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<body>
-  <nav>
+<body class="is-preload">
+<nav>
     <a href="#home">Home</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="home">
-    <h1>Praise Adefemi</h1>
-    <p>Computer Systems Technology Student | Software Development · Databases · Security</p>
-    <a class="button" href="#skills">Explore My Portfolio</a>
-  </section>
-
-  <section id="skills" class="hidden">
-    <h2>Technical & Professional Skills</h2>
-    <div class="skills">
-      <div class="skill">HTML / CSS / JavaScript</div>
-      <div class="skill">Java & OOP</div>
-      <div class="skill">Python (FastAPI)</div>
-      <div class="skill">C# (Data Structures)</div>
-      <div class="skill">SQL & Database Design</div>
-      <div class="skill">Network & Cybersecurity</div>
-      <div class="skill">Customer Service & Teamwork</div>
-      <div class="skill">Testing & Debugging</div>
-      <div class="skill">Git & GitHub</div>
+</nav>
+<!-- Header -->
+<section id="home">
+    <div class="inner">
+        <a class="image avatar"><img src="assets/images/OIP2.jpg" height="211"
+                                     width="212" alt="Praise Adefemi"/>
+        </a>
+        <h1><strong>Praise Adefemi</strong></h1>
+        <p>
+            Computer Systems Technology Student<br />
+            Passionate about Development, Databases & Cybersecurity<br />
+        </p>
+        <a class="button" href="#skills">Explore My Portfolio</a>
     </div>
-    <p style="margin-top:20px;">I combine technical depth and professional communication to deliver clean, secure, and user-focused solutions.</p>
-  </section>
+</section>
 
-  <section id="projects" class="hidden">
-    <h2>Featured Projects</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>AI Tutor Platform</h3>
-        <p>FastAPI + React system for document-based learning with data synchronization and deletion logic.</p>
-      </div>
-      <div class="card">
-        <h3>Travel Journal App</h3>
-        <p>Node.js/Handlebars project that lets users log trips, rate destinations, and store images in a database.</p>
-      </div>
-      <div class="card">
-        <h3>Java Networking</h3>
-        <p>Client-server multithreaded app for secure file transfer demonstrating sockets and concurrency.</p>
-      </div>
+<!-- Main Content -->
+<div id="main">
+
+    <!-- About Section -->
+    <section id="about">
+        <header class="major">
+
+        </header>
+
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>About Me</h2>
+        <p>
+        Hello! I’m Praise Adefemi, a dedicated CST student focused on building clean,
+        efficient, and real-world software solutions. My interests include full-stack
+        development, databases, and cybersecurity principles.
+       </p>
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>HTML, CSS, JavaScript</li>
+            <li>Java (OOP, Threads, Networking)</li>
+            <li>Python (FastAPI, SQLite, APIs)</li>
+            <li>C# (Data Structures: Trees, HashTables, Linked Lists)</li>
+            <li>SQL, ERD Design, Normalization</li>
+            <li>Network Security & Cybersecurity</li>
+            <li>Git, GitHub, Agile Collaboration</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Recent Work</h2>
+
+        <div class="projects">
+
+            <article class="project">
+<!--                <img src="assets/images/project1.png" alt="AI Tutor" />-->
+                <h3>AI Tutor Platform</h3>
+                <p>A Group project: file upload, FastAPI backend, React frontend, SQLite + ChromaDB.</p>
+            </article>
+
+            <article class="project">
+<!--                <img src="assets/images/project2.png" alt="Travel Journal" />-->
+                <h3>Travel Journal Web App</h3>
+                <p>Node.js + Express + SQLite CRUD app with authentication and category-based journaling.</p>
+            </article>
+
+            <article class="project">
+<!--                <img src="assets/images/project3.png" alt="Networking App" />-->
+                <h3>Java Networking Program</h3>
+                <p>Multithreaded client-server file transfer demonstrating concurrency and protocols.</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <ul class="contact-info">
+            <li>Email: <a href="mailto:praiseadefe@gmail.com">praiseadefe@gmail.com</a></li>
+            <li>LinkedIn: <a href="#">linkedin.com/in/praiseadefemi</a></li>
+            <li>GitHub: <a href="https://github.com/Praise-12">github.com/Praise-12</a></li>
+        </ul>
+    </section>
+
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="inner">
+        <p>&copy; 2025 Praise Adefemi.</p>
     </div>
-  </section>
+</footer>
 
-  <section id="contact" class="hidden">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:praiseadefe@gmail.com" style="color:#111;">praiseadefe@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/praiseadefemi" style="color:#111;">linkedin.com/in/praiseadefemi</a></p>
-    <p>GitHub: <a href="https://github.com/Praise-12" style="color:#111;">github.com/Praise-12</a></p>
-    <a class="button" href="#home">Back to Top</a>
-  </section>
-
-  <footer>
-    © 2025 Praise Adefemi — Last updated: November 2025
-  </footer>
-
-  <script>
-    // Reveal animation
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.2 });
-    document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
-
-    // Swipe navigation
-    let startY = 0;
-    document.addEventListener("touchstart", e => startY = e.touches[0].clientY);
-    document.addEventListener("touchend", e => {
-      const endY = e.changedTouches[0].clientY;
-      if (startY - endY > 50) scrollNext();
-      if (endY - startY > 50) scrollPrev();
-    });
-    function scrollNext() {
-      const current = document.elementFromPoint(window.innerWidth/2, window.innerHeight/2);
-      const next = current.closest("section").nextElementSibling;
-      if (next) next.scrollIntoView({ behavior: "smooth" });
-    }
-    function scrollPrev() {
-      const current = document.elementFromPoint(window.innerWidth/2, window.innerHeight/2);
-      const prev = current.closest("section").previousElementSibling;
-      if (prev) prev.scrollIntoView({ behavior: "smooth" });
-    }
-  </script>
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
 </body>
 </html>
