@@ -1,52 +1,67 @@
-/* ===============================
-   REMOVE PRELOAD CLASS ON LOAD
-=============================== */
+/*
+	ZeroFour by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
 
-window.addEventListener("load", () => {
-    document.body.classList.remove("is-preload");
-});
+(function($) {
 
+	var	$window = $(window),
+		$body = $('body');
 
-/* ===============================
-   SCROLL REVEAL ANIMATIONS
-=============================== */
+	// Breakpoints.
+		breakpoints({
+			xlarge:  [ '1281px',  '1680px' ],
+			large:   [ '981px',   '1280px' ],
+			medium:  [ '737px',   '980px'  ],
+			small:   [ null,      '736px'  ]
+		});
 
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px"
-};
+	// Play initial animations on page load.
+		$window.on('load', function() {
+			window.setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 100);
+		});
 
-const revealCallback = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-            observer.unobserve(entry.target);
-        }
-    });
-};
+	// Dropdowns.
+		$('#nav > ul').dropotron({
+			offsetY: -22,
+			mode: 'fade',
+			noOpenerFade: true,
+			speed: 300,
+			detach: false
+		});
 
-const revealObserver = new IntersectionObserver(revealCallback, observerOptions);
+	// Nav.
 
-document.querySelectorAll("section, .project").forEach(el => {
-    el.classList.add("reveal");   // hidden state
-    revealObserver.observe(el);   // track it
-});
+		// Title Bar.
+			$(
+				'<div id="titleBar">' +
+					'<a href="#navPanel" class="toggle"></a>' +
+					'<span class="title">' + $('#logo').html() + '</span>' +
+				'</div>'
+			)
+				.appendTo($body);
 
+		// Panel.
+			$(
+				'<div id="navPanel">' +
+					'<nav>' +
+						$('#nav').navList() +
+					'</nav>' +
+				'</div>'
+			)
+				.appendTo($body)
+				.panel({
+					delay: 500,
+					hideOnClick: true,
+					hideOnSwipe: true,
+					resetScroll: true,
+					resetForms: true,
+					side: 'left',
+					target: $body,
+					visibleClass: 'navPanel-visible'
+				});
 
-/* ===============================
-   SMOOTH SCROLL FOR INTERNAL LINKS
-=============================== */
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        const targetID = this.getAttribute("href");
-
-        if (targetID.length > 1) {  // prevent "#"
-            e.preventDefault();
-            document.querySelector(targetID).scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
-    });
-});
+})(jQuery);
